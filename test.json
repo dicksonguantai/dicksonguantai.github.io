@@ -1,0 +1,110 @@
+{
+    "status":"OK",
+    "copyright":"Copyright (c) 2017 Pro Publica Inc. All Rights Reserved.",
+    "results": {
+       "votes": {
+         "vote": {
+            "congress": 115,
+            "session": 1,
+            "chamber": "Senate",
+            "roll_call": 17,
+            "source": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1151/vote_115_1_00017.xml",
+            "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=1&vote=00017",
+                         "bill": {
+             "bill_id": "sconres3-115",
+             "number": "S.CON.RES.3",
+             "api_uri": "https://api.propublica.org/congress/v1/115/bills/sconres3.json",
+             "title": "A concurrent resolution setting forth the congressional budget for the United States Government for fiscal year 2017 and setting forth the appropriate budgetary levels for fiscal years 2018 through 2026.",
+             "latest_action": "Motion to reconsider laid on the table Agreed to without objection."
+             },
+                       "question": "On the Motion",
+            "description": "To establish a deficit-neutral reserve fund relating to reforming housing and Medicaid without prioritizing able-bodied adults over the disabled or raiding the Medicare Trust Funds to pay for new government programs, like Obamacare, which has failed Americans by increasing premiums and reducing affordable health care opportunities.",
+            "vote_type": "3/5",
+            "date": "2017-01-11",
+            "time": "22:07:00",
+            "result": "Motion Rejected",
+            "tie_breaker": "",
+            "tie_breaker_vote": "",
+            "document_number": "",
+            "document_title": "",
+            "democratic": {
+              "yes": 0,
+              "no": 45,
+              "present": 0,
+              "not_voting": 1,
+              "majority_position": "No"
+             },
+            "republican": {
+              "yes": 51,
+              "no": 0,
+              "present": 0,
+              "not_voting": 1,
+              "majority_position": "Yes"
+             },
+            "independent": {
+              "yes": 0,
+              "no": 2,
+              "present": 0,
+              "not_voting": 0
+             },
+            "total": {
+              "yes": 51,
+              "no": 47,
+              "present": 0,
+              "not_voting": 2
+             },
+             "positions": [
+               {
+                 "member_id": "A000360",
+                 "name": "Lamar Alexander",
+                 "party": "R",
+                 "state": "TN",
+ 
+                 "vote_position": "Yes",
+                 "dw_nominate": 0.323
+               },
+                             {
+                 "member_id": "B001230",
+                 "name": "Tammy Baldwin",
+                 "party": "D",
+                 "state": "WI",
+ 
+                 "vote_position": "No",
+                 "dw_nominate": -0.546
+               },
+                             {
+                 "member_id": "B001261",
+                 "name": "John Barrasso",
+                 "party": "R",
+                 "state": "WY",
+ 
+                 "vote_position": "Yes",
+                 "dw_nominate": 0.528
+               },
+                             {
+                 "member_id": "B001267",
+                 "name": "Michael Bennet",
+                 "party": "D",
+                 "state": "CO",
+ 
+                 "vote_position": "No",
+                 "dw_nominate": -0.208
+               },
+                             {
+                 "member_id": "B001277",
+                 "name": "Richard Blumenthal",
+                 "party": "D",
+                 "state": "CT",
+ 
+                 "vote_position": "No",
+                 "dw_nominate": -0.418
+               },
+                             {
+                 "member_id": "B000575",
+                 "name": "Roy Blunt",
+                 "party": "R",
+                 "state": "MO",
+ 
+                 "vote_position": "Yes",
+                 "dw_nominate": 0.431
+               }]}}}}

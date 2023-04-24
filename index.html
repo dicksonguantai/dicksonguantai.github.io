@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Green Navbar</title>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Bills</a></li>
+				<li><a href="#">MPS</a></li>
+				<li class="search">
+					<input type="text" placeholder="Search...">
+					<button>Search</button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+		<div class="card">
+			<h2 id = "bill-number">Insert Bill Number</h2>
+			<div class="card-content">
+				<h3 id ="bill-sponsor">Bill sponsor</h3>
+				<p id = "bill-title">Bill Title*decide where to add the like comment buttons</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<h2 id = "latest-action">Insert latest  action </h2>
+			<div class="card-content">
+				<img id ="image-decision" src="https://via.placeholder.com/150x150" alt="Placeholder Image">
+				<h3 id = "votes">Votes</h3>
+				<p>Table of the votes break down </p>
+				<button id= "like-button">a like button</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="src/index.js"></script>
+</html>
