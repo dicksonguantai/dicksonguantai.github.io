@@ -63,10 +63,81 @@ function defaltPage(bills){
  }
    else{
   imageOfStatus.src = "src/rejected.jpg"
-
-  var data = { Democrats: `${bills[0].democratic.yes}`, Democrats:`${bills[0].democratic.no}`,Democrats:`${bills[0].democratic.not_voting}`}
+   }
+  // var data = { "Democrats": `${bills[0].democratic.yes}`, "Democrats":`${bills[0].democratic.no}`,"Democrats":`${bills[0].democratic.not_voting}`}
+  var data = {
+    "Democrats": [
+      `${bills[0].democratic.yes}`,
+      `${bills[0].democratic.no}`,
+      `${bills[0].democratic.not_voting}`
+    ],
+    "Republican": [
+      `${bills[0].republican.yes}`,
+      `${bills[0].republican.no}`,
+      `${bills[0].republican.not_voting}`
+    ]
+  };
+  
+  var data = {
+    "Democrats": [
+      `${bills[0].democratic.yes}`,
+      `${bills[0].democratic.no}`,
+      `${bills[0].democratic.not_voting}`
+    ],
+    "Republican": [
+      `${bills[0].republican.yes}`,
+      `${bills[0].republican.no}`,
+      `${bills[0].republican.not_voting}`
+    ]
+  };
+  
+  var table = document.createElement("table");
+  table.id = "votes-table";
+  table.style.border = "1px solid black";
+  document.getElementById("votes").appendChild(table);
+  
+  // create table header row
+  var headerRow = table.insertRow();
+  headerRow.style.fontWeight = "bold";
+  headerRow.style.color = "black";
+  var cellParty = headerRow.insertCell();
+  cellParty.innerHTML = "Party";
+  cellParty.style.border = "1px solid black";
+  var cellYes = headerRow.insertCell();
+  cellYes.innerHTML = "Yes";
+  cellYes.style.border = "1px solid black";
+  var cellNo = headerRow.insertCell();
+  cellNo.innerHTML = "No";
+  cellNo.style.border = "1px solid black";
+  var cellNotVoting = headerRow.insertCell();
+  cellNotVoting.innerHTML = "Not Voting";
+  cellNotVoting.style.border = "1px solid black";
+  
+  // create data rows
+  for (let key in data) {
+    var dataRow = table.insertRow();
+    var cellPartyName = dataRow.insertCell();
+    cellPartyName.innerHTML = key;
+    cellPartyName.style.border = "1px solid black";
+    var cellYesVotes = dataRow.insertCell();
+    cellYesVotes.innerHTML = data[key][0];
+    cellYesVotes.style.border = "1px solid black";
+    cellYesVotes.style.color = "green";
+    var cellNoVotes = dataRow.insertCell();
+    cellNoVotes.innerHTML = data[key][1];
+    cellNoVotes.style.border = "1px solid black";
+    cellNoVotes.style.color = "green";
+    var cellNotVotingVotes = dataRow.insertCell();
+    cellNotVotingVotes.innerHTML = data[key][2];
+    cellNotVotingVotes.style.border = "1px solid black";
+    cellNotVotingVotes.style.color = "green";
+  }
+  
+  
+    
+  
  }
-}
+
 
 
 function init(){
