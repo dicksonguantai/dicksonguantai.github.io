@@ -68,21 +68,21 @@ nav ul li button {
 }
 
 .card h2 {
-	font-size: 24px;
+	font-size: 26px;
 	color: green;
 	margin-bottom: 20px;
-	border-bottom: 2px solid green;
+	border-bottom: 1px solid green;
 	padding-bottom: 10px;
 }
 
 .card-content h3 {
-	font-size: 18px;
+	font-size: 20px;
 	color: green;
 	margin-top: 0;
 }
 
 .card-content p {
-	font-size: 14px;
+	font-size: 20px;
 	margin-top: 10px;
 }
 
