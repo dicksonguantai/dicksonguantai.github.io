@@ -51,8 +51,24 @@ nav ul li button {
 	font-weight: bold;
 	cursor: pointer;
 }
-
 .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.navigation-buttons {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+/* .container {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -65,11 +81,11 @@ nav ul li button {
 	padding: 20px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 	width: 40%;
-}
+} */
 
 .card h2 {
 	font-size: 26px;
-	color: green;
+	color: bal;
 	margin-bottom: 20px;
 	border-bottom: 1px solid green;
 	padding-bottom: 10px;
