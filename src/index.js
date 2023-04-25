@@ -33,6 +33,12 @@ previousButton.addEventListener("click",(e)=>{
   
 
 })
+nextButton.addEventListener("click",(e)=>{
+  e.preventDefault()
+  index++
+  defaultPage(json,index)
+  
+  })
 }
 
 }
