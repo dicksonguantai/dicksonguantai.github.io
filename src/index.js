@@ -18,6 +18,7 @@ fetch(url, {
     // console.log(data.results.votes[`${index}`].bill)
     // console.log(data)
 })
+
 function dataHandler(json){
 const previousButton = document.getElementById("previous-button")
 const nextButton = document.getElementById("next-button")
@@ -111,7 +112,12 @@ function defaultPage(bills,index){
       `${bills[`${index}`].republican.not_voting}`
     ]
   };
-  
+  var table = document.getElementById("votes-table");
+
+  // if the table already exists, remove it
+  if (table) {
+    table.remove();
+  }
 
   var table = document.createElement("table");
   table.id = "votes-table";
