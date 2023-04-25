@@ -51,22 +51,12 @@ nav ul li button {
 	font-weight: bold;
 	cursor: pointer;
 }
+
 .container {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
-}
-
-.card {
-	margin: 10px;
-	padding: 10px;
-	border: 1px solid black;
-}
-
-.navigation-buttons {
-	margin-top: 10px;
-	display: flex;
-	justify-content: center;
+	margin-top: 50px;
 }
 
 .card {
@@ -79,14 +69,14 @@ nav ul li button {
 
 .card h2 {
 	font-size: 26px;
-	color: bal;
+	color: green;
 	margin-bottom: 20px;
 	border-bottom: 1px solid green;
 	padding-bottom: 10px;
 }
 
 .card-content h3 {
-	font-size: 20px;
+	font-size: 30px;
 	color: green;
 	margin-top: 0;
 }
@@ -107,7 +97,32 @@ nav ul li button {
 
 .card-content button {
 	padding: 10px 20px;
-	border-radius: 5px;
+	border-radius: 20px;
 	border: none;
 }
-
+.navigation-buttons {
+	
+  	padding: 8px 16px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 50px;
+	
+}
+#previous-button,#next-button{
+	font-size: xx-large;
+}
+#previous-button{
+	background-color: white;
+}
+#next-button{
+	background-color: #04AA6D;
+}
+#previous-button,#next-button:hover {
+	background-color: #ddd;
+}
+#previous-button:hover {
+	background-color: black;
+	color:white;
+}
