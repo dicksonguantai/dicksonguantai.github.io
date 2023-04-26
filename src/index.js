@@ -1,86 +1,88 @@
 const apiKey = "GiUQ7xafsVDwD8xxf3nHSfyBhxISYsCAZbnYfxcd";
 const url = "https://api.propublica.org/congress/v1/house/votes/recent.json";
-const url2 = "https://api.propublica.org/congress/v1/115/senate/sessions/1/votes/17.json"
-let index = 0
-function fetchParliamentData(url){
-fetch(url, {
-  headers: {
-    "X-API-Key": apiKey,
-    'Accept': 'application/json'
+const url2 = "https://api.propublica.org/congress/v1/115/senate/sessions/1/votes/17.json";
+let index = 0;
 
-  },
-})
+function fetchParliamentData(url) {
+  fetch(url, {
+    headers: {
+      "X-API-Key": apiKey,
+      'Accept': 'application/json'
+    },
+  })
   .then(response => response.json())
   .then(data => {
-    defaultPage(data.results.votes,index)
-    dataHandler(data.results.votes)
-    // console.log(data.results.votes)
-    // console.log(data.results.votes[`${index}`].bill)
-    // console.log(data)
-})
-
-function dataHandler(json){
-const previousButton = document.getElementById("previous-button")
-const nextButton = document.getElementById("next-button")
-previousButton.addEventListener("click",(e)=>{
-  e.preventDefault()
-  if (index>=1){
-    index--
-    defaultPage(json,index)
-  }
-  else{
-    index = 0
-    defaultPage(json,index)
-  }
-  
-
-})
-nextButton.addEventListener("click",(e)=>{
-  e.preventDefault()
-  index++
-  defaultPage(json,index)
-  
-  })
+    defaultPage(data.results.votes, index);
+    dataHandler(data.results.votes);
+  });
 }
 
+function dataHandler(json) {
+  const previousButton = document.getElementById("previous-button");
+  const nextButton = document.getElementById("next-button");
+  previousButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (index >= 1) {
+      index--;
+      defaultPage(json, index);
+    }
+    else {
+      index = 0;
+      defaultPage(json, index);
+    }
+  });
+  nextButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    index++;
+    defaultPage(json, index);
+  });
+  const searchInput = document.getElementById("search-inputForm");
+  searchInput.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchText = document.getElementById("search-input").value;
+    const bill = json.find(data => data.bill.number === searchText);
+    if (bill) {
+      index = json.indexOf(bill);
+      defaultPage(json, index);
+    } else {
+      const errorDiv = document.getElementById("error-message");
+      errorDiv.innerHTML = "No bill found with that number";
+    }
+  });
 }
-function fetchMemberVotes(url2){
+
+function searchController() {
+  // Get the search text value here if needed
+}
+
+function fetchMemberVotes(url2) {
   fetch(url2, {
     headers: {
       "X-API-Key": apiKey,
       'Accept': 'application/json'
-
     },
   })
-    .then(response => response.json())
-    .then(data => {
-      populateListOfMembers(data.results.votes.vote.positions)
-      console.log(data.results.votes)
-      // console.log(data.results.votes[`${index}`].bill)
-      // console.log(data)
-  })
-      
-  }
-  function populateListOfMembers(data){
-    const votesList = document.getElementById('votes-list');
-    data.forEach(vote => {
-        const voteElement = document.createElement('p');
-        voteElement.innerText = `${vote.name} - ${vote.party} -${vote.vote_position}`;
-        votesList.appendChild(voteElement);
-    });
-  }
+  .then(response => response.json())
+  .then(data => {
+    populateListOfMembers(data.results.votes.vote.positions);
+  });
+}
+
+function populateListOfMembers(data) {
+  const votesList = document.getElementById('votes-list');
+  data.forEach(vote => {
+    const voteElement = document.createElement('p');
+    voteElement.innerText = `${vote.name} - ${vote.party} -${vote.vote_position}`;
+    votesList.appendChild(voteElement);
+  });
+}
 
 fetchMemberVotes(url2);
+fetchParliamentData(url);
 
-function defaultPage(bills,index){
-
-   
-    console.log(bills[`${index}`])
-    console.log(bills[`${index}`].democratic.yes)
-
-
-    billNumberField = document.getElementById("bill-number")
-    billNumberField.textContent = `Bill Number : ${bills[`${index}`].bill.number}`
+function defaultPage(bills, index) {
+  billNumberField = document.getElementById("bill-number");
+  billNumberField.textContent = `Bill Number : ${bills[`${index}`].bill.number}`
 
     billSponsorField = document.getElementById("bill-sponsor")
     billSponsorField.textContent =`Sponsor ID :${bills[`${index}`].bill.sponsor_id}`
@@ -177,10 +179,3 @@ function init(){
 
 }
 init()
-
-
-
-
-
-
-
