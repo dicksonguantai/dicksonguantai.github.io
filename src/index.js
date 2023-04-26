@@ -29,7 +29,8 @@ previousButton.addEventListener("click",(e)=>{
     defaultPage(json,index)
   }
   else{
-    index= 0
+    index = 0
+    defaultPage(json,index)
   }
   
 
@@ -53,16 +54,23 @@ function fetchMemberVotes(url2){
   })
     .then(response => response.json())
     .then(data => {
-      
-      // console.log(data.results.votes.vote.positions[`${index}`])
+      populateListOfMembers(data.results.votes.vote.positions)
+      console.log(data.results.votes.vote.positions[`${index}`])
       // console.log(data.results.votes[`${index}`].bill)
       // console.log(data)
   })
       
   }
+  function populateListOfMembers(data){
+    const votesList = document.getElementById('votes-list');
+    data.forEach(vote => {
+        const voteElement = document.createElement('p');
+        voteElement.innerText = `${vote.name} - ${vote.party}`;
+        votesList.appendChild(voteElement);
+    });
+  }
 
 fetchMemberVotes(url2);
-
 function defaultPage(bills,index){
 
    
@@ -100,18 +108,7 @@ function defaultPage(bills,index){
     ]
   };
   
-  var data = {
-    "Democrats": [
-      `${bills[`${index}`].democratic.yes}`,
-      `${bills[`${index}`].democratic.no}`,
-      `${bills[`${index}`].democratic.not_voting}`
-    ],
-    "Republican": [
-      `${bills[`${index}`].republican.yes}`,
-      `${bills[`${index}`].republican.no}`,
-      `${bills[`${index}`].republican.not_voting}`
-    ]
-  };
+  
   var table = document.getElementById("votes-table");
 
   // if the table already exists, remove it

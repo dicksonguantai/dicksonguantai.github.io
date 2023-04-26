@@ -126,3 +126,27 @@ nav ul li button {
 	background-color: black;
 	color:white;
 }
+#votes-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+  }
+  
+  #votes-list p {
+	width: 50%;
+	text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+	#votes-list {
+	  flex-wrap: wrap;
+	  flex-direction: row;
+	}
+  
+	#votes-list p {
+	  width: calc(100% / 10);
+	}
+  }
+  
