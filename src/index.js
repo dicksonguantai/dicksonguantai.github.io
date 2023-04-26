@@ -71,10 +71,13 @@ function fetchMemberVotes(url2){
   }
 
 fetchMemberVotes(url2);
+
 function defaultPage(bills,index){
 
    
+    console.log(bills[`${index}`])
     console.log(bills[`${index}`].democratic.yes)
+
 
     billNumberField = document.getElementById("bill-number")
     billNumberField.textContent = `Bill Number : ${bills[`${index}`].bill.number}`
@@ -142,6 +145,7 @@ function defaultPage(bills,index){
   
   // create data rows
   for (let key in data) {
+    index = 0
     var dataRow = table.insertRow();
     var cellPartyName = dataRow.insertCell();
     cellPartyName.innerHTML = key;

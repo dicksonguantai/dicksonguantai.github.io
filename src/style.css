@@ -69,7 +69,7 @@ nav ul li button {
 
 .card h2 {
 	font-size: 26px;
-	color: green;
+	color: black;
 	margin-bottom: 20px;
 	border-bottom: 1px solid green;
 	padding-bottom: 10px;
@@ -117,7 +117,7 @@ nav ul li button {
 	background-color: white;
 }
 #next-button{
-	background-color: #04AA6D;
+	background-color:white;
 }
 #previous-button,#next-button:hover {
 	background-color: #ddd;
@@ -126,6 +126,14 @@ nav ul li button {
 	background-color: black;
 	color:white;
 }
+
+  
+  #votes-list {
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+  }
+  
 #votes-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -149,4 +157,5 @@ nav ul li button {
 	  width: calc(100% / 5);
 	}
   }
+  
   
