@@ -1,5 +1,10 @@
 header {
 	background-color: rgb(46, 145, 46);
+	position: relative;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+	z-index: 999;
 }
 
 nav {
@@ -123,11 +128,13 @@ nav ul li button {
 	background-color: #ddd;
 }
 #previous-button:hover {
-	background-color: black;
-	color:white;
+	background-color: white;
+	color:black;
 }
 
-  
+#votes-table{
+	justify-content: space-around;	
+}
   #votes-list  {
 	font-size: 14px;
 	font-weight: normal;
@@ -145,6 +152,7 @@ nav ul li button {
   #votes-list p {
 	width: 50%;
 	text-align: center;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   }
   
   @media (min-width: 768px) {

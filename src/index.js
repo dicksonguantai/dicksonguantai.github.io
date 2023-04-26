@@ -63,6 +63,7 @@ function fetchMemberVotes(url2) {
   })
   .then(response => response.json())
   .then(data => {
+    console.log(data)
     populateListOfMembers(data.results.votes.vote.positions);
   });
 }
