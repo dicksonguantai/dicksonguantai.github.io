@@ -41,14 +41,16 @@ function dataHandler(json) {
     e.preventDefault();
     const searchText = document.getElementById("search-input").value;
     const bill = json.find(data => data.bill.number === searchText);
-    console.log(bill);
     if (bill) {
       index = json.indexOf(bill);
       defaultPage(json, index);
     } else {
-      const errorDiv = document.getElementById("error-message");
-      errorDiv.innerHTML = "No bill found with that number";
+      // const errorDiv = document.getElementById("error-message");
+      // errorDiv.innerHTML = "No bill found with that number";
+      alert("No Bill Found")
     }
+    document.getElementById("search-input").value = ""
+    
   });
 }
 
@@ -123,7 +125,7 @@ function defaultPage(bills, index) {
 
   var table = document.createElement("table");
   table.id = "votes-table";
-  table.style.border = "1px solid black";
+  table.style.border = "0px solid black";
   
   document.getElementById("votes").appendChild(table);
 
