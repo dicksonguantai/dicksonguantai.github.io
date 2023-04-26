@@ -55,7 +55,7 @@ function fetchMemberVotes(url2){
     .then(response => response.json())
     .then(data => {
       populateListOfMembers(data.results.votes.vote.positions)
-      console.log(data.results.votes.vote.positions[`${index}`])
+      console.log(data.results.votes)
       // console.log(data.results.votes[`${index}`].bill)
       // console.log(data)
   })
@@ -65,7 +65,7 @@ function fetchMemberVotes(url2){
     const votesList = document.getElementById('votes-list');
     data.forEach(vote => {
         const voteElement = document.createElement('p');
-        voteElement.innerText = `${vote.name} - ${vote.party}`;
+        voteElement.innerText = `${vote.name} - ${vote.party} -${vote.vote_position}`;
         votesList.appendChild(voteElement);
     });
   }
