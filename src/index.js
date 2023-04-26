@@ -41,6 +41,7 @@ function dataHandler(json) {
     e.preventDefault();
     const searchText = document.getElementById("search-input").value;
     const bill = json.find(data => data.bill.number === searchText);
+    console.log(bill);
     if (bill) {
       index = json.indexOf(bill);
       defaultPage(json, index);
@@ -51,9 +52,7 @@ function dataHandler(json) {
   });
 }
 
-function searchController() {
-  // Get the search text value here if needed
-}
+
 
 function fetchMemberVotes(url2) {
   fetch(url2, {

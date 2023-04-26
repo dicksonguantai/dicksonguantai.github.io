@@ -5,12 +5,12 @@
 	<link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		<nav>
 			<ul>
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Bills</a></li>
-				<li><a href="#">MPS</a></li>
+				<li><a href="#header">Bill</a></li>
+				<li><a href="#votes-section">MPS</a></li>
 				<form id="search-inputForm">
 				<li class="search">
 					<input id="search-input" type="text" placeholder="Search...">
@@ -45,7 +45,7 @@
 				<button type="button" id="previous-button">&laquo;Previous</button>
 				<button type="button" id="next-button">Next&raquo;</button>
 		</div>
-		<div class="votes">
+		<div class="votes" id="votes-section">
 			<h2>Votes</h2>
 			<div class="card-content" id="votes-list">
 			</div>
