@@ -2,7 +2,7 @@ const apiKey = "GiUQ7xafsVDwD8xxf3nHSfyBhxISYsCAZbnYfxcd";
 const url = "https://api.propublica.org/congress/v1/house/votes/recent.json";
 const url2 = "https://api.propublica.org/congress/v1/115/senate/sessions/1/votes/17.json";
 let index = 0;
-
+// fetch function for the bills data
 function fetchParliamentData(url) {
   fetch(url, {
     headers: {
@@ -16,7 +16,7 @@ function fetchParliamentData(url) {
     dataHandler(data.results.votes);
   });
 }
-
+// function to handle the eventlisteners  and search inputs
 function dataHandler(json) {
   const previousButton = document.getElementById("previous-button");
   const nextButton = document.getElementById("next-button");
@@ -55,7 +55,7 @@ function dataHandler(json) {
 }
 
 
-
+//fetches the members individual votes
 function fetchMemberVotes(url2) {
   fetch(url2, {
     headers: {
@@ -81,7 +81,7 @@ function populateListOfMembers(data) {
 
 fetchMemberVotes(url2);
 fetchParliamentData(url);
-
+//function that controls the main page content 
 function defaultPage(bills, index) {
   billNumberField = document.getElementById("bill-number");
   billNumberField.textContent = `Bill Number : ${bills[`${index}`].bill.number}`
@@ -93,7 +93,7 @@ function defaultPage(bills, index) {
     billTitleField.textContent = `Title : ${bills[`${index}`].bill.title} `
 
     billLatestAction = document.getElementById("latest-action")
-    billLatestAction.textContent = `Status : ${bills[`${index}`].bill.latest_action} ${bills[`${index}`].date}`
+    billLatestAction.textContent = `Status : ${bills[`${index}`].bill.latest_action} DATE: ${bills[`${index}`].date}`
    if ((bills[`${index}`].result) === "Passed"){
       imageOfStatus = document.getElementById("image-decision")
       imageOfStatus.src = "src/passed.jpg"
@@ -115,10 +115,10 @@ function defaultPage(bills, index) {
     ]
   };
   
-  
+  //create table with the party votes
   var table = document.getElementById("votes-table");
 
-  // if the table already exists, remove it
+  // if the table already exists, removes it
   if (table) {
     table.remove();
   }
@@ -174,10 +174,12 @@ function defaultPage(bills, index) {
  }
 
 
-
+//initializes the fucntions
+document.addEventListener("DOMContentLoaded", function(event) {
 function init(){
 
     fetchParliamentData(url);
 
 }
+})
 init()
