@@ -47,7 +47,7 @@ function dataHandler(json) {
     } else {
       // const errorDiv = document.getElementById("error-message");
       // errorDiv.innerHTML = "No bill found with that number";
-      alert("No Bill Found")
+      alert("No Bill Found! Please note this program implements strict equality")
     }
     document.getElementById("search-input").value = ""
     
