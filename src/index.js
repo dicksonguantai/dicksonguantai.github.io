@@ -175,11 +175,11 @@ function defaultPage(bills, index) {
 
 
 //initializes the fucntions
-document.addEventListener("DOMContentLoaded", function(event) {
+
 function init(){
 
     fetchParliamentData(url);
 
 }
-})
+
 init()
