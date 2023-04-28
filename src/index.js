@@ -14,6 +14,7 @@ function fetchParliamentData(url) {
   .then(data => {
     defaultPage(data.results.votes, index);
     dataHandler(data.results.votes);
+    console.log(data)
   });
 }
 // function to handle the eventlisteners  and search inputs
@@ -94,11 +95,13 @@ function defaultPage(bills, index) {
 
     billLatestAction = document.getElementById("latest-action")
     billLatestAction.textContent = `Status : ${bills[`${index}`].bill.latest_action} DATE: ${bills[`${index}`].date}`
+
    if ((bills[`${index}`].result) === "Passed"){
       imageOfStatus = document.getElementById("image-decision")
       imageOfStatus.src = "src/passed.jpg"
  }
    else{
+  imageOfStatus = document.getElementById("image-decision")
   imageOfStatus.src = "src/rejected.jpg"
    }
   // var data = { "Democrats": `${bills[`${index}`].democratic.yes}`, "Democrats":`${bills[`${index}`].democratic.no}`,"Democrats":`${bills[`${index}`].democratic.not_voting}`}
