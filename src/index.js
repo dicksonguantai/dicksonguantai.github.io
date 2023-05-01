@@ -14,7 +14,6 @@ function fetchParliamentData(url) {
   .then(data => {
     defaultPage(data.results.votes, index);
     dataHandler(data.results.votes);
-    console.log(data)
   });
 }
 // function to handle the eventlisteners  and search inputs
@@ -50,7 +49,7 @@ function dataHandler(json) {
       // errorDiv.innerHTML = "No bill found with that number";
       alert("No Bill Found! Please note this program implements strict equality")
     }
-    document.getElementById("search-input").value = ""
+    
     
   });
 }
